@@ -16,20 +16,9 @@
 
   <script>
     // URL of the JSON server
-    const jsonServerUrl = 'https://jsonplaceholder.typicode.com/todos/1';
+    const jsonServerUrl = 'https://raw.githubusercontent.com/mdn/learning-area/main/javascript/apis/fetching-data/can-store/products.json';
 
     // Fetch data from the JSON server
-    fetch(jsonServerUrl)
-      .then(response => response.json())
-      .then(data => {
-        console.log('Fetched data from JSON server:');
-        console.log(data);
-      })
-      .catch(error => {
-        console.error('Error fetching data from JSON server:', error);
-      });
-
-    /* Fetch data from the JSON server
     fetch(jsonServerUrl)
       .then(response => response.json())
       .then(data => {
@@ -59,7 +48,6 @@
       .catch(error => {
         console.error('Error fetching data from JSON server:', error);
       });
-    */
   </script>
 </body>
 </html>
