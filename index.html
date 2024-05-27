@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web INU</title>
+  <style>
+    .product {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <button id="inuButton">INU 버튼</button>
+  <div id="output"></div>
+
+  <script>
+    // URL of the JSON server
+    const jsonServerUrl = 'https://jsonplaceholder.typicode.com/todos/1';
+
+    // Fetch data from the JSON server
+    fetch(jsonServerUrl)
+      .then(response => response.json())
+      .then(data => {
+        console.log('Fetched data from JSON server:');
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error fetching data from JSON server:', error);
+      });
+
+    /* Fetch data from the JSON server
+    fetch(jsonServerUrl)
+      .then(response => response.json())
+      .then(data => {
+        const output = document.getElementById('output');
+        const choppedTomatoes = data.find(product => product.name === 'chopped tomatoes');
+
+        if (choppedTomatoes) {
+          const productDiv = document.createElement('div');
+          productDiv.classList.add('product');
+
+          const nameHeading = document.createElement('h3');
+          nameHeading.textContent = choppedTomatoes.name;
+          productDiv.appendChild(nameHeading);
+
+          const priceHeading = document.createElement('h4');
+          priceHeading.textContent = `Price: ${choppedTomatoes.price}`;
+          productDiv.appendChild(priceHeading);
+
+          output.appendChild(productDiv);
+
+          // Save the data to localStorage
+          localStorage.setItem('choppedTomatoes', JSON.stringify(choppedTomatoes));
+        } else {
+          output.textContent = 'Product "chopped tomatoes" not found.';
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching data from JSON server:', error);
+      });
+    */
+  </script>
+</body>
+</html>
